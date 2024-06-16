@@ -27,7 +27,7 @@ Feel like getting even more creative? You can customize the templates used for g
 
 Example `templates.json`:
 
-```json
+```javascript
   var reasons_list = [
     'Job Responsibilities: Access is necessary to perform regular job duties and responsibilities.', 
     'Project Collaboration: Access is needed for collaboration on a specific project.', 
