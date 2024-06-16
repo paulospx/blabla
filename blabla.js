@@ -1,33 +1,10 @@
-# blabla
-Ever been caught red-handed with a "blabla" reason for a role permission request? Fear not! 
+/*
+ blabla.js v0.1 (2013-01-11)
+ (c) 2023 Paulo P. MIT License
+*/
 
-The **blabla** is here to save the day (and your productivity). No more awkward explanations or creative dry spells—our handy tool generates plausible reasons for requesting role permissions. Perfect for baffling your colleagues and impressing your role approvers with the perfect reason.
+(function (window, undefined) {
 
-## Features
-
-- Generates a random, plausible reason for role permission requests.
-- Customizable reason templates to suit your wildest whims.
-- Easy to use and guaranteed to bring your request to you.
-
-## Installation
-
-You can use this project as a browser *bookmarklet*.
-
-## Usage
-
-Create a bookmarklet with the following link:
-
-```javascript
-javascript:(function(){var d=document,s=d.createElement('script');s.src='https://paulospx.github.io/blabla/blabla.js';d.body.appendChild(s);}())
-```
-
-### Customizing Reason Templates
-
-Feel like getting even more creative? You can customize the templates used for generating reasons by editing the `templates.json` file. This file contains a list of templates with placeholders that can be filled with random values.
-
-Example `templates.json`:
-
-```json
   var reasons_list = [
     'Job Responsibilities: Access is necessary to perform regular job duties and responsibilities.', 
     'Project Collaboration: Access is needed for collaboration on a specific project.', 
@@ -50,25 +27,12 @@ Example `templates.json`:
     'Backup and Recovery: Access is needed for managing backup and recovery processes.', 
     'User Access Management: Access is necessary for managing user roles and permissions within the system.'
   ];
-```
 
-
-
-## Contributing
-
-Got a hilarious idea for a new template? We welcome contributions! If you have suggestions for new features, templates, or bug fixes, feel free to open an issue or submit a pull request.
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -am 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a Pull Request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-For questions, suggestions, or just to share a laugh, please open an issue.
-
+  const random_index = Math.floor(Math.random() * reasons_list.length);
+  const random_reason = reasons_list[random_index];
+  var notes = document.getElementById('Notes')
+  if(notes) {
+    notes.value = random_reason;
+  }
+  alert(random_reason);
+}(this));
